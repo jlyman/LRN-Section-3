@@ -7,9 +7,10 @@
   },
   "dependencies": {
     "react": "15.2.1",
-    "react-native": "0.31.0"
+    "react-native": "0.31.0",
+    "react-native-vector-icons": "^2.0.3"
   },
-    "devDependencies": {
+  "devDependencies": {
     "babel-eslint": "^6.1.2",
     "eslint": "^2.9.0",
     "eslint-config-airbnb": "^9.0.1",

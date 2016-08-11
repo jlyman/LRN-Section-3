@@ -1,23 +1,25 @@
 import React, { Component, PropTypes } from 'react'
 import {
 	View,
+	Text,
 	StyleSheet,
 } from 'react-native'
 
-import StatusScreen from './StatusScreen'
+import StatusIndicator from './StatusIndicator'
 
 
-class MainContainer extends Component {
+class StatusScreen extends Component {
 	render() {
 		return (
 			<View style={styles.container}>
-				<StatusScreen isUp={this.props.isUp} />
+				<StatusIndicator isUp={this.props.isUp} />
+				<Text style={styles.statusText}>Service {this.props.isUp ? 'Up' : 'Down!'}</Text>
 			</View>
 		)
 	}
 }
 
-MainContainer.propTypes = {
+StatusScreen.propTypes = {
 	isUp: PropTypes.bool.isRequired,
 }
 
@@ -27,6 +29,9 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'center',
 	},
+	statusText: {
+		fontSize: 30,
+	},
 })
 
-export default MainContainer
+export default StatusScreen

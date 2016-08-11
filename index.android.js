@@ -6,10 +6,12 @@ import {
 import MainContainer from './components/MainContainer'
 
 
+const isUp = true
+
 class BeBriefed extends Component {
 	render() {
 		return (
-			<MainContainer />
+			<MainContainer isUp={isUp} />
 		)
 	}
 }
