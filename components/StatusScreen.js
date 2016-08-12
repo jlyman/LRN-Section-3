@@ -39,7 +39,12 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 	},
 	statusText: {
-		fontSize: 30,
+		fontSize: 40,
+		fontWeight: 'bold',
+		marginTop: 60,
+		textAlign: 'center',
+		color: '#E6E8EF',
+		backgroundColor: 'rgba(0,0,0,0)',
 	},
 	lastUpText: {
 		fontSize: 20,

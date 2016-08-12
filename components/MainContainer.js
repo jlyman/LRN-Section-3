@@ -3,6 +3,7 @@ import {
 	View,
 	StyleSheet,
 } from 'react-native'
+import LinearGradient from 'react-native-linear-gradient'
 
 import StatusScreen from './StatusScreen'
 import TabBarContainer from './TabBarContainer'
@@ -21,10 +22,13 @@ class MainContainer extends Component {
 
 	render() {
 		return (
-			<View style={styles.container}>
+			<LinearGradient colors={['#313D43', '#4A787A']} style={styles.container}>
 				{this._renderTab(this.props.selectedService, this.props.services)}
-				<TabBarContainer onTabChange={this.props.onServiceChange} />
-			</View>
+				<TabBarContainer
+					selectedService={this.props.selectedService}
+					onTabChange={this.props.onServiceChange}
+				/>
+			</LinearGradient>
 		)
 	}
 }
