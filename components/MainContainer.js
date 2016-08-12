@@ -5,6 +5,7 @@ import {
 } from 'react-native'
 
 import StatusScreen from './StatusScreen'
+import TabBarContainer from './TabBarContainer'
 
 
 class MainContainer extends Component {
@@ -12,6 +13,7 @@ class MainContainer extends Component {
 		return (
 			<View style={styles.container}>
 				<StatusScreen isUp={this.props.isUp} lastUpTime={this.props.lastUpTime} />
+				<TabBarContainer />
 			</View>
 		)
 	}
