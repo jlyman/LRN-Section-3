@@ -20,11 +20,32 @@ class BeBriefed extends Component {
 		}
 
 		this._switchService = this._switchService.bind(this)
+		this._fetchServiceStatus = this._fetchServiceStatus.bind(this)
+	}
+
+	componentDidMount() {
+		setInterval(this._fetchServiceStatus, 5000)
 	}
 
 	_switchService(nextService) {
 		this.setState({ selectedService: nextService })
 	}
+
+	_fetchServiceStatus() {
+		fetch('http://localhost:8080/status')
+			.then(response => response.json())
+			.then(data => {
+				const newState = this.state.services.map(s => (
+					Object.assign(s, {
+						isUp: data[s.key].status === 'up',
+						lastUpTime: new Date(data[s.key].lastUpTime),
+					})
+				))
+
+				this.setState({ services: newState })
+			})
+	}
+
 
 	render() {
 		return (
