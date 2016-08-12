@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
 	},
 	label: {
 		color: '#ffffff',
-		paddingVertical: 5,
+		paddingTop: 5,
 	},
 	selectedLabel: {
 		color: '#CC9766',
